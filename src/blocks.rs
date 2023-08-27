@@ -36,9 +36,9 @@ pub enum Statement {
     Call(usize, Vec<Argument>),
     If(Block, Block),   // first block must return bool
     IfElse(Block, Block, Block),
-    ForRange(Argument, Argument),   //for i in range(x, y):
-    ForIn(Argument),      //for x in array
-    ForInEnum(Variable, Variable, Argument),  //for (i, x) in array.enumerate()
+    ForRange(Argument, Argument, Block),   //for i in range(x, y):
+    ForIn(Argument, Block),      //for x in array
+    ForInEnum(Variable, Variable, Argument, Block),  //for (i, x) in array.enumerate()
     InnerBlock(Block),
 }
 
